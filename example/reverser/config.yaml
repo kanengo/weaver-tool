@@ -1,0 +1,15 @@
+appConfig: weaver.toml
+repo: storehouse.dev.nextlove.online/next
+pullRepo: storehouse-internal.dev.nextlove.online/next
+imagePullSecrets:
+  - storehouse
+listeners:
+  - name: reverser
+namespace: app
+groups:
+  - name: reverser-group
+    components:
+      - server/cmd/example/reverser/Reverser
+    resourceSpec:
+      requests:
+        memory: "32Mi"
